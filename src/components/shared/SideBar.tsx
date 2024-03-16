@@ -10,7 +10,7 @@ const SideBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className='h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50'>
+    <div className='h-screen w-72 bg-green-300 p-5 shadow-md shadow-purple-200/50'>
         <div className='flex size-full flex-col gap-4'>
             <Link href='/' className='flex items-center gap-2 md:py-2'>
                 <Image
@@ -24,11 +24,11 @@ const SideBar = () => {
               <SignedIn>
               <ul className='hidden w-full flex-col items-start gap-2 md:flex'>
                 {navLinks.map((item)=>{
-                  const isActive = item.route = pathname 
+                  const isActive = item.route === pathname 
                   return ( <li key={item.route} className={`flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner ${
                     isActive ? 'bg-purple-gradient text-black' : 'text-gray-700'
                   }`}> 
-                            <Link className='p-16-semibold flex size-full gap-4 p-4' href={item.route}>
+                            <Link href={item.route} className='p-16-semibold flex size-full gap-4 p-4' >
                                 <Image
                                   src={item.icon}
                                   alt='logo'
@@ -49,7 +49,7 @@ const SideBar = () => {
               </SignedIn>
               
               <SignedOut>
-                    <Link href='/login'> Login </Link>
+                    <Link href='/sign-in'> Sign In </Link>
               </SignedOut>
 
             </nav>

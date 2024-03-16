@@ -1,7 +1,7 @@
 import React from 'react'
 import { SignIn } from "@clerk/nextjs";
 
-const LoginPage = () => {
+const SignInPage = () => {
   return (
     <div>
         <SignIn/>
@@ -9,4 +9,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default SignInPage
